@@ -1,34 +1,30 @@
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class LoginAutomationTest {
 
     @Test
     public void loginTest() throws InterruptedException {
 
-        System.out.println("Opening login page...");
+        System.out.println("Opening automation login page...");
 
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://the-internet.herokuapp.com/login");
-
         driver.manage().window().maximize();
 
-        Thread.sleep(2000);
-
-        WebElement username = driver.findElement(By.id("username"));
-        username.sendKeys("tomsmith");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("SuperSecretPassword!");
+        driver.get("https://the-internet.herokuapp.com/login");
 
         Thread.sleep(2000);
 
-        WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
-        loginButton.click();
+        driver.findElement(By.id("username")).sendKeys("tomsmith");
+
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+
+        System.out.println("Login successful");
 
         Thread.sleep(5000);
 
