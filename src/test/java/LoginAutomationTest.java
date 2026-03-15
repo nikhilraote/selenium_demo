@@ -22,7 +22,11 @@ public class LoginAutomationTest {
 
         driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
 
+        Thread.sleep(5000);
+
         driver.findElement(By.cssSelector("button[type='submit']")).click();
+
+        Thread.sleep(5000);
 
         System.out.println("Login successful");
 
