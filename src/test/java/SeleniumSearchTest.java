@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class SeleniumSearchDemo {
+public class SeleniumSearchTest {
 
     @Test
     public void seleniumDemo() throws InterruptedException {
